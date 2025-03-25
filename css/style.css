@@ -69,7 +69,26 @@ body {
     height: 40px;
     width: auto;
     background: transparent;
+    margin-bottom: 15px;
 }
+
+.logo2 {
+    height: 30px;
+    width: auto;
+    background: transparent;
+}
+
+.logo-text {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.logo-text2 {
+    font-size: medium;
+    font-weight: bold;
+}
+
 
 .nav-menu {
     display: flex;
