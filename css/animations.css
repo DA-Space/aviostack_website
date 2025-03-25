@@ -55,7 +55,151 @@
     transform: translateY(0);
 }
 
-/* Animation classes for hero section */
+/* Metallic color palette */
+:root {
+    --metallic-blue: rgba(0, 122, 255, 0.1);
+    --metallic-green: rgba(48, 209, 88, 0.1);
+    --metallic-orange: rgba(255, 159, 10, 0.1);
+    --metallic-peach: rgba(255, 118, 94, 0.1);
+    --metallic-purple: rgba(191, 90, 242, 0.1);
+    --metallic-gold: rgba(255, 214, 10, 0.1);
+}
+
+/* Hero section gradient animations */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Primary rotating gradient */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+        45deg,
+        var(--metallic-blue) 0%,
+        var(--metallic-green) 20%,
+        var(--metallic-orange) 40%,
+        var(--metallic-peach) 60%,
+        var(--metallic-purple) 80%,
+        var(--metallic-blue) 100%
+    );
+    opacity: 0.5;
+    animation: gradientRotate 20s linear infinite;
+    z-index: 1;
+}
+
+/* Secondary static gradient */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 50% 50%,
+        var(--metallic-blue) 0%,
+        transparent 70%
+    );
+    z-index: 1;
+}
+
+/* Floating orbs */
+.hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.glow-1 {
+    top: -20%;
+    right: -20%;
+    background: radial-gradient(
+        circle at center,
+        var(--metallic-orange) 0%,
+        var(--metallic-peach) 50%,
+        transparent 70%
+    );
+    animation: glowPulse1 12s ease-in-out infinite;
+}
+
+.glow-2 {
+    bottom: -30%;
+    left: -10%;
+    background: radial-gradient(
+        circle at center,
+        var(--metallic-green) 0%,
+        var(--metallic-blue) 50%,
+        transparent 70%
+    );
+    animation: glowPulse2 15s ease-in-out infinite;
+}
+
+.glow-3 {
+    top: 40%;
+    left: -20%;
+    background: radial-gradient(
+        circle at center,
+        var(--metallic-purple) 0%,
+        var(--metallic-gold) 50%,
+        transparent 70%
+    );
+    animation: glowPulse3 18s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes gradientRotate {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes glowPulse1 {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1) translate(5%, 5%);
+    }
+}
+
+@keyframes glowPulse2 {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1) translate(-5%, -5%);
+    }
+}
+
+@keyframes glowPulse3 {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1) translate(5%, -5%);
+    }
+}
+
+/* Content animations */
 .animate-fade-up {
     opacity: 0;
     transform: translateY(30px);
@@ -74,10 +218,6 @@
     animation: fadeUp 0.8s ease forwards 0.4s;
 }
 
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
 @keyframes fadeUp {
     0% {
         opacity: 0;
@@ -89,11 +229,15 @@
     }
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+/* Glass effect for hero content */
+.hero-content {
+    background: linear-gradient(
+        169deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.01) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
 }
