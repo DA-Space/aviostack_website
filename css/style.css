@@ -62,6 +62,7 @@ body {
 .logo {
     height: 40px;
     width: auto;
+    background: transparent;
 }
 
 .nav-menu {
