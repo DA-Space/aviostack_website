@@ -3,73 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviostack - Smart Lockers for E-Commerce Delivery</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Aviostack - Revolutionary Smart Micro Warehouses for E-Commerce. Transform your logistics with our ultra-last mile delivery solutions.">
+    <meta name="keywords" content="smart warehouses, micro warehouses, e-commerce logistics, automated storage, smart lockers, last mile logistics, ultra-last mile delivery">
+    <meta name="author" content="Aviostack">
+    <meta property="og:title" content="Aviostack - Smart Micro Warehouses for Ultra-Last Mile Deliveries">
+    <meta property="og:description" content="Smart Micro Warehouses for Ultra-Last Mile E-Commerce Deliveries">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+
+    <!-- Web Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#007AFF">
+
+    <title>Aviostack | Smart Micro Warehouses for E-Commerce Ultra-last Mile Delivery</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Preloading Critical Resources -->
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="preload" href="/js/main.js" as="script">
+    <link rel="preload" href="/assets/images/logo.png" as="image">
+    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Add critical CSS here */
+        :root {
+            --primary-color: #007AFF;
+            --background-dark: #0A0F1C;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+    
+    <!-- Defer Non-Critical CSS -->
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Aviostack",
+            "url": "https://aviostack.com",
+            "logo": "https://aviostack.com/assets/images/logo.png",
+            "description": "Revolutionary Smart Micro Warehouses for E-Commerce",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Your Country"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "contact@aviostack.com"
+            },
+            "sameAs": [
+                "https://linkedin.com/company/aviostack",
+                "https://twitter.com/aviostack"
+            ]
+        }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Smart Micro Warehouses",
+        "description": "Advanced automated storage solutions for e-commerce logistics",
+        "brand": {
+            "@type": "Brand",
+            "name": "Aviostack"
+        },
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Aviostack",
+        "url": "https://aviostack.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://aviostack.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
 </head>
-<body>
-    <header>
+<body class="dark-theme">
+    <nav class="navbar">
         <div class="container">
-            <img src="logo.png" alt="Aviostack Logo" class="logo">
-            <h1>Aviostack</h1>
+            <div class="nav-brand">
+                <img src="assets/images/logo.png" alt="Aviostack Logo" class="logo">
+                <span>Aviostack</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="cta-button">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
+
     <main>
-        <section class="hero">
-            <h2>Revolutionizing Last-Mile E-Commerce Delivery</h2>
-            <p>Innovative smart lockers for secure and efficient package management.</p>
-        </section>
-        <section class="about">
-            <h2>About Aviostack</h2>
-            <p>At Aviostack, we are transforming the last mile e-commerce delivery with our advanced smart lockers. Our solutions ensure secure, efficient, and convenient delivery for both businesses and customers.</p>
-        </section>
-        <section class="services">
-            <h2>Our Solutions</h2>
-            <div class="service-list">
-                <div class="service-item">
-                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*S15D8Uxz48JQEfgH4eZMUQ.png" alt="Smart Lockers">
-                    <h3>Smart Lockers</h3>
-                    <p>Our smart lockers streamline the delivery and return process, offering a secure and convenient way to handle packages.</p>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animate-fade-up">
+                        Revolutionary Smart 
+                        <span class="highlight">Micro Warehouses</span>
+                    </h1>
+                    <p class="animate-fade-up-delay">Transform your e-commerce logistics with our advanced automated storage solutions.</p>
+                    <div class="cta-group animate-fade-up-delay-2">
+                        <a href="#contact" class="button primary">Get Started</a>
+                        <a href="#solutions" class="button secondary">Learn More</a>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvU7SDLdi52QTnsALBPrf8jZoQ28ZoeX5Vg" alt="Advanced Security">
-                    <h3>Advanced Security</h3>
-                    <p>Equipped with surveillance cameras and tamper alerts, our lockers ensure the highest level of security for your packages.</p>
-                </div>
-                <div class="service-item">
-                    <img src="https://smiota.com/wp-content/uploads/2024/04/Real-time-package-tracking-and-data-collection-using-smart-locker-app-for-Retail-Analytics-1080x675.png" alt="Real-Time Tracking">
-                    <h3>Real-Time Tracking</h3>
-                    <p>Receive real-time notifications and track your packages from pick-up to delivery.</p>
+                <div class="hero-image animate-float">
+                    <!-- Add your hero image here -->
                 </div>
             </div>
         </section>
-        <section class="benefits">
-            <h2>Why Choose Aviostack?</h2>
-            <ul>
-                <li>Enhanced Security</li>
-                <li>Increased Efficiency</li>
-                <li>Cost-Effective Solutions</li>
-                <li>Eco-Friendly Operations</li>
-            </ul>
+
+        <section id="solutions" class="solutions">
+            <div class="container">
+                <h2 class="section-title">Smart Micro Warehouse Solutions</h2>
+                <div class="solutions-grid">
+                    <div class="solution-card animate-on-scroll">
+                        <div class="icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3>Automated Storage</h3>
+                        <p>State-of-the-art micro warehouses with intelligent storage allocation and retrieval systems.</p>
+                    </div>
+                    <div class="solution-card animate-on-scroll">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Advanced Security</h3>
+                        <p>24/7 surveillance, biometric access control, and tamper-proof storage units.</p>
+                    </div>
+                    <div class="solution-card animate-on-scroll">
+                        <div class="icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Real-Time Analytics</h3>
+                        <p>Comprehensive dashboard with real-time tracking, analytics, and inventory management.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-wrapper">
+                    <form id="contactForm" class="contact-form animate-on-scroll">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="button primary">Send Message</button>
+                    </form>
+                    <div class="contact-info animate-on-scroll">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>contact@aviostack.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-location-dot"></i>
+                            <p>Your Business Address</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 Aviostack. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="Aviostack Logo" class="logo">
+                    <p>Transforming e-commerce logistics with smart micro warehouses.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aviostack. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>

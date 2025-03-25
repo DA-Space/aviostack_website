@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /assets/downloads/
+
+# Allow search engines to access JavaScript, CSS, and image files
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.svg$
+
+# Sitemap location
+Sitemap: https://aviostack.com/sitemap.xml
