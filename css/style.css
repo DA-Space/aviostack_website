@@ -117,11 +117,30 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 8rem 0; /* Increased padding */
+    padding: 8rem 0;
     position: relative;
     overflow: hidden;
     background: var(--background-dark);
+    /* Add these properties for rounded corners */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 0 1rem 1rem 1rem; /* Add margin to show the rounded corners */
 }
+
+/* Add a container for the hero to maintain the rounded corners with the gradient */
+.hero-container {
+    position: relative;
+    background: var(--background-dark);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden; /* This ensures the gradients stay within rounded corners */
+    margin: -1rem -1rem 1rem -1rem; /* Compensate for the hero margin */
+}
+
 
 .hero-wrapper {
     display: grid;
