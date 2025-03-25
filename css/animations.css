@@ -58,11 +58,11 @@
 /* Metallic color palette */
 :root {
     --metallic-blue: rgba(0, 123, 255, 0.495);
-    --metallic-green: rgba(48, 209, 88, 0.251);
+    --metallic-green: rgba(48, 209, 88, 0.306);
     --metallic-orange: rgba(255, 157, 10, 0.135);
     --metallic-peach: rgba(255, 118, 94, 0.174);
-    --metallic-purple: rgba(191, 90, 242, 0.267);
-    --metallic-gold: rgba(255, 214, 10, 0.251);
+    --metallic-purple: rgba(191, 90, 242, 0.381);
+    --metallic-gold: rgba(255, 214, 10, 0.361);
 }
 
 /* Hero section gradient animations */
