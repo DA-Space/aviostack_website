@@ -16,23 +16,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: formData.get('message')
             };
 
+            // Validate data before sending
+            if (!data.name || !data.email || !data.message) {
+                throw new Error('Please fill in all required fields');
+            }
+
             const response = await fetch('https://script.google.com/macros/s/AKfycby0suLCElaRuvDHZayFco4cg-8qRbFbHWrNrHQUZ9eh8tV2FVfurWVUvpCxwYsM0ArL/exec', {
                 method: 'POST',
-                mode: 'no-cors', // Add this back as we can't use CORS with Apps Script
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
             });
 
-            // Since we're using no-cors, we won't get the actual response
-            // So we'll assume success if no error is thrown
+            // Show success message and reset form
             showMessage('Message sent successfully! We\'ll get back to you soon.', 'success');
             form.reset();
+            
+            // Log success for debugging
+            console.log('Form submitted successfully');
 
         } catch (error) {
             console.error('Submission error:', error);
-            showMessage('Error sending message. Please try again.', 'error');
+            showMessage(error.message || 'Error sending message. Please try again.', 'error');
         } finally {
             submitButton.disabled = false;
             submitButton.innerHTML = 'Send Message';
