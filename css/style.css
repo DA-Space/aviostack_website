@@ -357,6 +357,14 @@ body {
     padding: 8rem 0;
     background-color: var(--background-card);
     position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.contact .container {
+    width: var(--container-width);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
 }
 
 .contact-info {
@@ -369,8 +377,9 @@ body {
 .contact-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 6rem;
+    gap: 4rem;
     align-items: start;
+    width: 100%;
 }
 
 .form-group {
@@ -622,33 +631,26 @@ footer {
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
-        width: 100%;
     }
 
     .contact-form,
     .contact-info {
         width: 100%;
         max-width: 100%;
+        padding: 1.5rem;
         margin: 0;
     }
 
-    /* Reduce padding on mobile */
-    .contact-form,
-    .contact-info {
-        padding: 1.5rem;
-    }
-
-    /* Adjust input padding on mobile */
-    .form-group input,
-    .form-group textarea {
-        padding: 0.875rem;
+    .contact .container {
+        width: 90%;
+        padding: 0 1rem;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        width: 100%;
-        padding: 0 1.5rem;
+        width: 95%;
+        padding: 0 1rem;
     }
 
     .hero {
@@ -673,10 +675,19 @@ footer {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    .contact .container {
+        width: 95%;
+    }
 }
 
-
 @media (max-width: 480px) {
+    .container,
+    .contact .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
     .hero {
         padding: 4rem 1rem;
     }
@@ -689,5 +700,9 @@ footer {
     .button {
         width: 100%;
         text-align: center;
+    }
+
+    .contact {
+        padding: 4rem 0;
     }
 }
