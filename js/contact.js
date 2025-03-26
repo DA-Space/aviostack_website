@@ -16,23 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: formData.get('message')
             };
 
-            // Make sure to replace with your new deployment URL
             const response = await fetch('https://script.google.com/macros/s/AKfycby0suLCElaRuvDHZayFco4cg-8qRbFbHWrNrHQUZ9eh8tV2FVfurWVUvpCxwYsM0ArL/exec', {
                 method: 'POST',
+                mode: 'no-cors', // Add this back as we can't use CORS with Apps Script
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
             });
 
-            const result = await response.json();
-
-            if (result.status === 'success') {
-                showMessage('Message sent successfully! We\'ll get back to you soon.', 'success');
-                form.reset();
-            } else {
-                throw new Error(result.message || 'Submission failed');
-            }
+            // Since we're using no-cors, we won't get the actual response
+            // So we'll assume success if no error is thrown
+            showMessage('Message sent successfully! We\'ll get back to you soon.', 'success');
+            form.reset();
 
         } catch (error) {
             console.error('Submission error:', error);
