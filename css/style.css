@@ -613,6 +613,36 @@ footer {
     .solutions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .container {
+        width: 90%;
+        padding: 0 1rem;
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Reduce padding on mobile */
+    .contact-form,
+    .contact-info {
+        padding: 1.5rem;
+    }
+
+    /* Adjust input padding on mobile */
+    .form-group input,
+    .form-group textarea {
+        padding: 0.875rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -644,6 +674,7 @@ footer {
         gap: 2rem;
     }
 }
+
 
 @media (max-width: 480px) {
     .hero {
