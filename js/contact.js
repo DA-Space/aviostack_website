@@ -11,35 +11,30 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const formData = new FormData(form);
             const data = {
+                timestamp: new Date().toISOString(),
                 name: formData.get('name'),
                 email: formData.get('email'),
                 message: formData.get('message')
             };
 
-            // Validate data before sending
-            if (!data.name || !data.email || !data.message) {
-                throw new Error('Please fill in all required fields');
-            }
-
+            // Make sure to replace with your new deployment URL
             const response = await fetch('https://script.google.com/macros/s/AKfycby0suLCElaRuvDHZayFco4cg-8qRbFbHWrNrHQUZ9eh8tV2FVfurWVUvpCxwYsM0ArL/exec', {
                 method: 'POST',
-                mode: 'no-cors',
+                mode: 'no-cors', // Required for Google Apps Script
+                redirect: 'follow',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/plain;charset=utf-8', // Changed from application/json
                 },
                 body: JSON.stringify(data)
             });
 
-            // Show success message and reset form
+            // Since we're using no-cors, we need to assume success if no error is thrown
             showMessage('Message sent successfully! We\'ll get back to you soon.', 'success');
             form.reset();
-            
-            // Log success for debugging
-            console.log('Form submitted successfully');
 
         } catch (error) {
             console.error('Submission error:', error);
-            showMessage(error.message || 'Error sending message. Please try again.', 'error');
+            showMessage('Error sending message. Please try again.', 'error');
         } finally {
             submitButton.disabled = false;
             submitButton.innerHTML = 'Send Message';
